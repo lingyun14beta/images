@@ -1,59 +1,28 @@
-# Personal Website Source Code
+# 个人网站源代码 (Personal Website)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Build-Passing-brightgreen" alt="Build Status">
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/Stack-HTML5%20%2F%20ES6-orange" alt="Tech Stack"></a>
-  <a href="https://supabase.com"><img src="https://img.shields.io/badge/Backend-Supabase-green" alt="Supabase"></a>
-  <a href="https://www.jsdelivr.com"><img src="https://img.shields.io/badge/Network-jsDelivr%20CDN-red" alt="CDN"></a>
-</p>
+这是我的个人主页和作品集网站的源代码。
 
-## 📖 Introduction
+本项目是一个纯静态网站，没有复杂的后台，使用 **HTML  + JavaScript** 原生编写，并配合 **Supabase** 数据库来实现动态内容展示。
 
-This repository contains the source code for a lightweight, static personal website and portfolio. 
+## 📂 仓库结构说明
 
-The project implements a **Serverless Architecture**, utilizing **Supabase** as a headless CMS for metadata management and **GitHub** as an object storage solution for static assets. This design eliminates the need for traditional server maintenance while ensuring high performance and low latency via global CDN.
+为了保持项目整洁，本仓库采用了**代码与资源分离**的策略：
 
-## 🚀 Key Features
+*   **`main` 分支**：只存放网站的源代码（HTML, JS, 配置文件等）。
+*   **`assets` 分支**：专门用来存放图片和媒体资源文件。
 
-- **Decoupled Architecture**: 
-  - Source code resides in the `main` branch.
-  - Binary assets (images/media) are isolated in the `assets` orphan branch to optimize git history size.
-- **Dynamic Content Loading**: Fetches real-time data (Titles, Descriptions, Links) from a remote PostgreSQL database (Supabase).
-- **Custom Lightbox**: A built-in, dependency-free modal for high-resolution media viewing.
-- **Secure Admin Panel**: 
-  - A mobile-responsive web dashboard for content management.
-  - Implements **Client-side AES Encryption** to protect API credentials, ensuring security even in a static hosting environment.
-- **CDN Integration**: Assets are automatically delivered via jsDelivr for optimal load speeds.
+## ✨ 主要功能
 
-## 🛠️ Technical Stack
+*   **响应式设计**：完美适配电脑和手机访问。
+*   **动态相册**：通过 API 读取数据库内容，自动生成图片流。
+*   **在线管理**：包含一个轻量级的网页版管理端，方便随时更新内容。
 
-| Component | Technology | Description |
-| :--- | :--- | :--- |
-| **Frontend** | Vanilla JS / CSS3 | No heavy frameworks, purely native performance. |
-| **Database** | Supabase | Stores metadata mapping for the gallery. |
-| **Storage** | Git File System | Version-controlled asset storage via `assets` branch. |
-| **Security** | Crypto-JS | Handles secure token decryption on the client side. |
+## 🛠️ 技术栈
 
-## 📂 Repository Structure
+*   **前端**：原生 HTML5 
+*   **数据存储**：Supabase
+*   **托管**：GitHub Pages / Vercel
 
-```text
-├── index.html          # Main entry point
-├── gallery.html        # Dynamic media grid
-├── admin_panel.html    # Secure upload terminal (Restricted access)
-├── config.json         # Encrypted configuration file
-├── README.md           # Documentation
-└── assets/             # (Located in a separate branch)
-📦 Deployment
-This project is designed to be deployed on any static site hosting provider:
-GitHub Pages
-Vercel
-Netlify
-Cloudflare Pages
-🔧 Setup Guide
-Clone the repository.
-Configure your Supabase URL and Anon Key in the script tags.
-Generate an encrypted configuration file using CryptoJS for the admin panel.
-Push the code to the main branch.
-Create an orphan assets branch for media storage.
-📄 License
-This project is open-source and available under the MIT License.
+## 📄 协议
+
+MIT License
